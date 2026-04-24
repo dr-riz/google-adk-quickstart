@@ -1,20 +1,25 @@
-from google.adk.agents.llm_agent import Agent
+from google.adk.agents import LlmAgent
+from google.adk.agents import ParallelAgent
 
-def get_weather(city: str):
-    """Fetches real-time weather for a city."""
-    return f"The weather in {city} is sunny, 25°C."
-
-def get_time(city: str):
-    """Fetches the current local time for a city."""
-    return f"The current time in {city} is 2:00 PM."
-
-root_agent = Agent(
-    model='gemini-flash-latest',
-    name='root_agent',
-    instruction="""
-    Help users get city information. 
-    If a user asks for multiple pieces of information (e.g., weather AND time), 
-    always call tools in parallel.
-    """,
-    tools=[get_weather, get_time]
+# Agent specialized in fetching flight data
+flight_agent = LlmAgent(
+    name="FlightSearchAgent",
+    instruction="You are an expert at finding and booking flights.",
+    description="Use this agent for all flight-related inquiries."
 )
+
+# Agent specialized in hotel bookings
+hotel_agent = LlmAgent(
+    name="HotelBookingAgent",
+    instruction="You are an expert at finding the best hotels within budget.",
+    description="Use this agent for hotel or accommodation queries."
+)
+
+# This manager will call both specialists at the same time
+trip_manager = ParallelAgent(
+    name="TravelCoordinator",
+    sub_agents=[flight_agent, hotel_agent]
+)
+
+# ADK requires a root_agent to be exposed at module level
+root_agent = trip_manager
