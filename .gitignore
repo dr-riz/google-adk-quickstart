@@ -1,0 +1,3 @@
+my_agent/.env
+my_agent/.adk/session.db
+my_agent/__pycache__
