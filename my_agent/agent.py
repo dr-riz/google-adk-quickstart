@@ -1,8 +1,10 @@
 from google.adk.agents import LlmAgent
 from google.adk.agents import ParallelAgent
+from google.adk.models.lite_llm import LiteLlm
 
 # Agent specialized in fetching flight data
 flight_agent = LlmAgent(
+    model=LiteLlm(model="ollama_chat/phi3:latest"),
     name="FlightSearchAgent",
     instruction="You are an expert at finding and booking flights.",
     description="Use this agent for all flight-related inquiries."
@@ -10,6 +12,7 @@ flight_agent = LlmAgent(
 
 # Agent specialized in hotel bookings
 hotel_agent = LlmAgent(
+    model=LiteLlm(model="ollama_chat/phi3:latest"),
     name="HotelBookingAgent",
     instruction="You are an expert at finding the best hotels within budget.",
     description="Use this agent for hotel or accommodation queries."
