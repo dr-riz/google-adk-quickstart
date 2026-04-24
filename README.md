@@ -2,6 +2,9 @@
 
 This repository is a minimal Google ADK workspace centered on a single agent package, `my_agent`.
 
+1. https://adk.dev/get-started/python/#run-your-agent
+2. https://share.google/aimode/sxAHGknrj8meepwzK
+
 ## Project Analysis
 
 Current structure (relevant files):
