@@ -2,8 +2,10 @@
 
 This repository is a minimal Google ADK workspace centered on a single agent package, `my_agent`.
 
-1. https://adk.dev/get-started/python/#run-your-agent
-2. https://share.google/aimode/sxAHGknrj8meepwzK
+1. https://adk.dev/get-started/python/#run-your-agent (single agent with single function)
+2. https://share.google/aimode/sxAHGknrj8meepwzK (single agent with with multiple function)
+3. https://share.google/aimode/SiCLuA8ytJChJzdq7 (multiple agents)
+4. https://adk.dev/agents/models/ollama/ (switched models to local Ollama)
 
 ## Project Analysis
 
