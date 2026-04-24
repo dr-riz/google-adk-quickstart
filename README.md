@@ -6,6 +6,7 @@ This repository is a minimal Google ADK workspace centered on a single agent pac
 2. https://share.google/aimode/sxAHGknrj8meepwzK (single agent with with multiple function)
 3. https://share.google/aimode/SiCLuA8ytJChJzdq7 (multiple agents)
 4. https://adk.dev/agents/models/ollama/ (switched models to local Ollama)
+5. https://raphaelmansuy.github.io/adk_training/docs/sequential_workflows/ (multiple agents inter-communicating)
 
 ## Project Analysis
 
